@@ -1,0 +1,6 @@
+/* ✅ Transición suave para modal */
+#modal {
+  transition: opacity 0.2s ease;
+}
+
+/* ✅ Espacio para estilos adicionales si los necesitas */
