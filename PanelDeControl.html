@@ -1,307 +1,376 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stitch Design</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
-    <title>Stitch Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <!-- Fuentes y Tailwind -->
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link
+    rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+  />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-50 font-sans">
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <nav class="bg-gray-900 text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <a href="index.html" class="text-xl font-bold">Mi Proyecto</a>
+  <!-- NAVBAR -->
+  <nav class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-xl font-bold">Mi Proyecto</a>
+        </div>
+        <div class="flex items-center sm:hidden">
+          <button id="menu-toggle" class="text-gray-300 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+        <div id="menu" class="hidden sm:flex sm:items-center space-x-4">
+          <a href="#" class="hover:text-gray-300 flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256"><path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"/></svg>
+            Mi Panel
+          </a>
+          <a href="#" class="hover:text-gray-300 flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128ZM128,72h88a8,8,0,0,0,0-16H128a8,8,0,0,0,0,16Zm88,112H128a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16ZM82.34,42.34,56,68.69,45.66,58.34A8,8,0,0,0,34.34,69.66l16,16a8,8,0,0,0,11.32,0l32-32A8,8,0,0,0,82.34,42.34Zm0,64L56,132.69,45.66,122.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Zm0,64L56,196.69,45.66,186.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Z"/></svg>
+            Tareas
+          </a>
+          <!-- resto de links -->
+        </div>
       </div>
-
-      <!-- Botón hamburguesa móvil -->
-      <div class="flex items-center sm:hidden">
-        <button id="menu-toggle" class="text-gray-300 focus:outline-none">
-          <!-- Ícono hamburguesa -->
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Links de navegación -->
-      <div id="menu" class="hidden sm:flex sm:items-center space-x-4">
-        <a href="CalendarioIntegrado.html" class="hover:text-gray-300">Calendario</a>
-        <a href="DetalleDeProyectos.html" class="hover:text-gray-300">Detalle de Proyectos</a>
-        <a href="GestionDeTareas.html" class="hover:text-gray-300">Gestión de Tareas</a>
-        <a href="ListaDeProyectos.html" class="hover:text-gray-300">Lista de Proyectos</a>
-        <a href="PanelDeControl.html" class="hover:text-gray-300">Panel de Control</a>
-        <a href="PerfilDeUsuario.html" class="hover:text-gray-300">Perfil de Usuario</a>
+      <div id="menu-mobile" class="sm:hidden hidden mt-2 space-y-1">
+        <a href="#" class="block py-2 px-4 hover:bg-gray-800">Mi Panel</a>
+        <a href="#" class="block py-2 px-4 hover:bg-gray-800">Tareas</a>
+        <!-- … -->
       </div>
     </div>
+    <script>
+      document.getElementById('menu-toggle').onclick = () =>
+        document.getElementById('menu-mobile').classList.toggle('hidden');
+    </script>
+  </nav>
 
-    <!-- Menú desplegable en móvil -->
-    <div id="menu-mobile" class="sm:hidden hidden mt-2 space-y-1">
-      <a href="CalendarioIntegrado.html" class="block py-2 px-4 hover:bg-gray-800">Calendario</a>
-      <a href="DetalleDeProyectos.html" class="block py-2 px-4 hover:bg-gray-800">Detalle de Proyectos</a>
-      <a href="GestionDeTareas.html" class="block py-2 px-4 hover:bg-gray-800">Gestión de Tareas</a>
-      <a href="ListaDeProyectos.html" class="block py-2 px-4 hover:bg-gray-800">Lista de Proyectos</a>
-      <a href="PanelDeControl.html" class="block py-2 px-4 hover:bg-gray-800">Panel de Control</a>
-      <a href="PerfilDeUsuario.html" class="block py-2 px-4 hover:bg-gray-800">Perfil de Usuario</a>
-    </div>
-  </div>
+  <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+    <div class="layout-container flex flex-1 flex-col">
+      <div class="gap-1 px-6 flex flex-1 justify-center py-5">
 
-  <!-- Script simple para toggle -->
-  <script>
-    const btn = document.getElementById('menu-toggle');
-    const menuMobile = document.getElementById('menu-mobile');
+        <!-- PANEL LATERAL -->
+        <div class="layout-content-container flex flex-col w-80">
+          <!-- tu panel lateral intacto -->
+        </div>
 
-    btn.addEventListener('click', () => {
-      menuMobile.classList.toggle('hidden');
-    });
-  </script>
-</nav>
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="layout-content-container flex flex-col flex-1 max-w-[960px]">
 
+          <!-- TÍTULO -->
+          <div class="p-4">
+            <p class="text-2xl font-bold text-[#0d141c]">Mi Panel</p>
+          </div>
 
-    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-80">
-            <div class="flex h-full min-h-[700px] flex-col justify-between bg-slate-50 p-4">
-              <div class="flex flex-col gap-4">
-                <div class="flex gap-3">
-                  <div
-                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEvXxk4JAhMCXqlqkO1l6WDCMKj6bv67FVQs7TbgUbrKZ0aIj7AyqlnLn2UXtowATRfxjzMduZwaL40CuKnDQsF87WLTw-wjSBr7pEsY2ck0ryxJbScBNmqtXr3v7hibAc6X4g1XKUBas9gZYESNdfDJfQfVNC5Ky8yX-PyxGGBwiAbHx9EtsccRMaeRGySsbYBOQSJ2fc9KKLtcRpo8abu1yD3OvoYxjKbKB-GdjE3H9_jFBUTM3-iy_j_3rkmnuNvYCaw4owxuw");'
-                  ></div>
-                  <div class="flex flex-col">
-                    <h1 class="text-[#0d141c] text-base font-medium leading-normal">Ana Rodriguez</h1>
-                    <p class="text-[#49739c] text-sm font-normal leading-normal">Administrador</p>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e7edf4]">
-                    <div class="text-[#0d141c]" data-icon="House" data-size="24px" data-weight="fill">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Mi Panel</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="ListChecks" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M224,128a8,8,0,0,1-8,8H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128ZM128,72h88a8,8,0,0,0,0-16H128a8,8,0,0,0,0,16Zm88,112H128a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16ZM82.34,42.34,56,68.69,45.66,58.34A8,8,0,0,0,34.34,69.66l16,16a8,8,0,0,0,11.32,0l32-32A8,8,0,0,0,82.34,42.34Zm0,64L56,132.69,45.66,122.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Zm0,64L56,196.69,45.66,186.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Tareas</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="Briefcase" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Proyectos</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="Users" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">CRM</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="Calendar" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Calendario</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="Folder" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M216,72H131.31L104,44.69A15.86,15.86,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM40,56H92.69l16,16H40ZM216,200H40V88H216Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Drive</p>
-                  </div>
-                </div>
-              </div>
+          <!-- RESUMEN DE PROYECTOS -->
+          <h2 class="px-4 pt-5 pb-3 text-[22px] font-bold text-[#0d141c]">Resumen de Proyectos</h2>
+          <div class="flex flex-wrap gap-4 p-4">
+            <div class="flex flex-1 flex-col gap-2 rounded-lg p-6 border border-[#cedbe8]">
+              <p>En Progreso</p>
+              <p id="count-in-progress" class="text-2xl font-bold">0</p>
+            </div>
+            <div class="flex flex-1 flex-col gap-2 rounded-lg p-6 border border-[#cedbe8]">
+              <p>Completados</p>
+              <p id="count-completed" class="text-2xl font-bold">0</p>
+            </div>
+            <div class="flex flex-1 flex-col gap-2 rounded-lg p-6 border border-[#cedbe8]">
+              <p>En Espera</p>
+              <p id="count-pending" class="text-2xl font-bold">0</p>
+            </div>
+            <div class="flex flex-1 flex-col gap-2 rounded-lg p-6 border border-[#cedbe8]">
+              <p>Cancelados</p>
+              <p id="count-cancelled" class="text-2xl font-bold">0</p>
             </div>
           </div>
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight min-w-72">Mi Panel</p></div>
-            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Resumen de Proyectos</h2>
-            <div class="flex flex-wrap gap-4 p-4">
-              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#cedbe8]">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">En Progreso</p>
-                <p class="text-[#0d141c] tracking-light text-2xl font-bold leading-tight">5</p>
-              </div>
-              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#cedbe8]">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">Completados</p>
-                <p class="text-[#0d141c] tracking-light text-2xl font-bold leading-tight">12</p>
-              </div>
-              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#cedbe8]">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">En Espera</p>
-                <p class="text-[#0d141c] tracking-light text-2xl font-bold leading-tight">2</p>
-              </div>
-              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#cedbe8]">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">Cancelados</p>
-                <p class="text-[#0d141c] tracking-light text-2xl font-bold leading-tight">1</p>
-              </div>
+
+          <!-- PRÓXIMAS TAREAS -->
+          <h2 class="px-4 pt-5 pb-3 text-[22px] font-bold text-[#0d141c]">Próximas Tareas</h2>
+          <div id="upcoming-tasks" class="space-y-2 p-4"></div>
+
+          <!-- ACTIVIDAD RECIENTE -->
+          <h2 class="px-4 pt-5 pb-3 text-[22px] font-bold text-[#0d141c]">Actividad Reciente</h2>
+          <div id="activity-log" class="space-y-2 p-4"></div>
+
+          <!-- FORMULARIO PARA AÑADIR TAREAS y AGREGAR ARCHIVOS -->
+          <div class="p-4 border-t">
+            <input id="new-task-title" type="text" placeholder="Título de la tarea"
+                   class="w-full mb-2 border p-2 rounded" />
+            <input id="new-task-date" type="date"
+                   class="w-full mb-2 border p-2 rounded" />
+
+            <!-- Gráfica de tareas por estado -->
+            <div class="w-full mb-4">
+              <canvas id="taskChart" class="w-full h-64"></canvas>
             </div>
-            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Próximas Tareas</h2>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="Clock" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Reunión de inicio</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">Proyecto A</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="Clock" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Entrega de diseño</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">Proyecto B</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="Clock" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Revisión de presupuesto</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">Proyecto C</p>
-              </div>
-            </div>
-            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Actividad Reciente</h2>
-            <div class="flex gap-4 bg-slate-50 px-4 py-3">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-1 flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">Proyecto A</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal">Se completó la tarea 'Investigación de mercado'</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal">Hace 2 horas</p>
-              </div>
-            </div>
-            <div class="flex gap-4 bg-slate-50 px-4 py-3">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-1 flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">Proyecto B</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal">Se agregó un nuevo miembro al equipo</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal">Ayer</p>
-              </div>
-            </div>
-            <div class="flex gap-4 bg-slate-50 px-4 py-3">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-1 flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">Proyecto C</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal">Se actualizó el cronograma del proyecto</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal">Hace 3 días</p>
-              </div>
-            </div>
-            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Estadísticas</h2>
-            <div class="flex flex-wrap gap-4 px-4 py-6">
-              <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-lg border border-[#cedbe8] p-6">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">Progreso del Proyecto</p>
-                <div class="grid min-h-[180px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3">
-                  <div class="border-[#49739c] bg-[#e7edf4] border-t-2 w-full" style="height: 50%;"></div>
-                  <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">Proyecto A</p>
-                  <div class="border-[#49739c] bg-[#e7edf4] border-t-2 w-full" style="height: 40%;"></div>
-                  <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">Proyecto B</p>
-                  <div class="border-[#49739c] bg-[#e7edf4] border-t-2 w-full" style="height: 40%;"></div>
-                  <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">Proyecto C</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-4 px-4 py-6">
-              <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-lg border border-[#cedbe8] p-6">
-                <p class="text-[#0d141c] text-base font-medium leading-normal">Tareas Completadas por Mes</p>
-                <div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
-                  <svg width="100%" height="148" viewBox="-3 0 478 150" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path
-                      d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z"
-                      fill="url(#paint0_linear_1131_5935)"
-                    ></path>
-                    <path
-                      d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
-                      stroke="#49739c"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                    ></path>
-                    <defs>
-                      <linearGradient id="paint0_linear_1131_5935" x1="236" y1="1" x2="236" y2="149" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#e7edf4"></stop>
-                        <stop offset="1" stop-color="#e7edf4" stop-opacity="0"></stop>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div class="flex justify-around">
-                    <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">Ene</p>
-                    <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">Feb</p>
-                    <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">Mar</p>
-                    <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">Abr</p>
-                    <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">May</p>
-                    <p class="text-[#49739c] text-[13px] font-bold leading-normal tracking-[0.015em]">Jun</p>
-                  </div>
-                </div>
-              </div>
+
+            <!-- Input oculto para archivos -->
+            <input id="file-upload" type="file" accept="*/*" multiple hidden />
+
+            <!-- Botón único -->
+            <button id="btn-add-task"
+                    class="w-full mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition-colors">
+              Añadir tarea / archivos
+            </button>
+
+            <!-- Importar desde JSON (sigue intacto) -->
+            <div class="mt-4 bg-blue-600 p-4 rounded-lg flex flex-col sm:flex-row sm:items-center sm:gap-4">
+              <input
+                id="import-file"
+                type="file"
+                accept="application/json"
+                class="block w-full text-sm
+                       text-gray-200
+                       file:mr-4 file:py-2 file:px-4
+                       file:rounded-lg file:border-0
+                       file:bg-white file:text-gray-800
+                       hover:file:bg-gray-100
+                       cursor-pointer"
+              />
+              <button
+                id="btn-import"
+                class="mt-2 sm:mt-0 px-4 py-2 bg-gray-800 text-white rounded-lg
+                       hover:bg-gray-700 transition-colors"
+              >
+                Importar tareas desde JSON
+              </button>
             </div>
           </div>
+
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+  <!-- SCRIPT DE FUNCIONALIDAD -->
+  <script>
+    const STORAGE_KEY = 'panelState';
+    let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+      tasks: [
+        { id:1, title:'Reunión de inicio', project:'Proyecto A', date:'2025-07-20', status:'in-progress' },
+        { id:2, title:'Entrega de diseño', project:'Proyecto B', date:'2025-07-18', status:'in-progress' },
+        { id:3, title:'Revisión de presupuesto', project:'Proyecto C', date:'2025-07-17', status:'in-progress' }
+      ],
+      log: []
+    };
+
+    const save = () => localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+
+    function renderSummary() {
+      const cnt = { 'in-progress':0, completed:0, pending:0, cancelled:0 };
+      state.tasks.forEach(t => cnt[t.status]++);
+      document.getElementById('count-in-progress').textContent = cnt['in-progress'];
+      document.getElementById('count-completed').textContent   = cnt.completed;
+      document.getElementById('count-pending').textContent     = cnt.pending;
+      document.getElementById('count-cancelled').textContent   = cnt.cancelled;
+    }
+
+    function renderTasks() {
+      const up = document.getElementById('upcoming-tasks');
+      up.innerHTML = '';
+      state.tasks
+        .filter(t => t.status === 'in-progress')
+        .sort((a,b)=> new Date(a.date) - new Date(b.date))
+        .forEach(t => {
+          const d = document.createElement('div');
+          d.className = 'flex justify-between p-2 bg-white rounded shadow items-center';
+          d.innerHTML = `
+            <div>
+              <p class="font-semibold text-[#0d141c]">${t.title}</p>
+              <p class="text-[#49739c] text-sm">${t.project} – ${t.date}</p>
+            </div>
+            <div class="flex gap-2">
+              <button data-id="${t.id}" data-action="complete"
+                      class="px-2 py-1 bg-green-500 text-white rounded">Hecho</button>
+              <button data-id="${t.id}" data-action="pending"
+                      class="px-2 py-1 bg-yellow-400 text-white rounded">En espera</button>
+              <button data-id="${t.id}" data-action="cancel"
+                      class="px-2 py-1 bg-red-500 text-white rounded">Cancelar</button>
+            </div>`;
+          up.appendChild(d);
+        });
+    }
+
+    function renderLog() {
+      const lg = document.getElementById('activity-log');
+      lg.innerHTML = '';
+      state.log.slice().reverse().forEach(e => {
+        const d = document.createElement('div');
+        d.className = 'text-sm text-gray-700';
+        d.textContent = `[${new Date(e.time).toLocaleTimeString()}] ${e.text}`;
+        lg.appendChild(d);
+      });
+    }
+
+    // ——— Chart.js: tareas por estado ———
+    let taskChart = null;
+    function updateChart() {
+      const ctx = document.getElementById('taskChart').getContext('2d');
+      const counts = {
+        'En progreso': state.tasks.filter(t=>t.status==='in-progress').length,
+        'Completados':   state.tasks.filter(t=>t.status==='completed').length,
+        'En espera':     state.tasks.filter(t=>t.status==='pending').length,
+        'Cancelados':    state.tasks.filter(t=>t.status==='cancelled').length
+      };
+      const labels = Object.keys(counts), data = Object.values(counts);
+      if (taskChart) {
+        taskChart.data.labels = labels;
+        taskChart.data.datasets[0].data = data;
+        taskChart.update();
+      } else {
+        taskChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels,
+            datasets: [{
+              label: 'Tareas por estado',
+              data,
+              backgroundColor: 'rgba(54, 162, 235, 0.5)',
+              borderColor:   'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { beginAtZero: true, ticks: { stepSize: 1 } }
+            }
+          }
+        });
+      }
+    }
+
+    // Maneja clicks en tareas
+    document.getElementById('upcoming-tasks').addEventListener('click', e => {
+      const btn = e.target.closest('button[data-id]');
+      if (!btn) return;
+      const t = state.tasks.find(x => x.id === +btn.dataset.id);
+      const act = btn.dataset.action;
+      if (act === 'complete') {
+        t.status = 'completed';
+        state.log.push({time:Date.now(), text:`Tarea "${t.title}" completada.`});
+      } else if (act === 'pending') {
+        t.status = 'pending';
+        state.log.push({time:Date.now(), text:`Tarea "${t.title}" puesta en espera.`});
+      } else if (act === 'cancel') {
+        t.status = 'cancelled';
+        state.log.push({time:Date.now(), text:`Tarea "${t.title}" cancelada.`});
+      }
+      save(); renderAll();
+    });
+
+    // ————————
+    // BOTÓN ÚNICO: Añadir tarea o archivos
+    // ————————
+    const fileInput = document.getElementById('file-upload');
+    document.getElementById('btn-add-task').onclick = () => {
+      const title = document.getElementById('new-task-title').value.trim();
+      const date  = document.getElementById('new-task-date').value;
+      // 1) Si falta título o fecha → abrimos selector de archivos
+      if (!title || !date) {
+        fileInput.value = '';
+        fileInput.click();
+        return;
+      }
+      // 2) Si hay título+fecha → añadimos la tarea
+      const newId = state.tasks.reduce((mx,t)=>mx>t.id?mx:t.id,0) + 1;
+      state.tasks.push({ id:newId, title, project:'General', date, status:'in-progress' });
+      state.log.push({ time:Date.now(), text:`Añadida tarea "${title}".` });
+      save(); renderAll();
+      document.getElementById('new-task-title').value = '';
+      document.getElementById('new-task-date').value = '';
+    };
+
+    // Cuando el usuario seleccione archivos, procesarlos aquí
+    fileInput.onchange = () => {
+      Array.from(fileInput.files).forEach(file => {
+        state.log.push({
+          time: Date.now(),
+          text: `Archivo "${file.name}" agregado (${file.type||'desconocido'}).`
+        });
+        if (file.type==='application/json' || file.name.endsWith('.json')) {
+          const reader = new FileReader();
+          reader.onload = e => {
+            try {
+              const arr = JSON.parse(e.target.result);
+              if (!Array.isArray(arr)) throw 'No es un arreglo';
+              arr.forEach(item => {
+                const nid = state.tasks.reduce((mx,t)=>mx>t.id?mx:t.id,0)+1;
+                state.tasks.push({
+                  id: nid,
+                  title: item.title||'Sin título',
+                  project: item.project||'General',
+                  date: item.date||new Date().toISOString().slice(0,10),
+                  status: ['in-progress','completed','pending','cancelled'].includes(item.status)?item.status:'in-progress'
+                });
+              });
+              state.log.push({time:Date.now(),text:`Importadas ${arr.length} tareas desde JSON.`});
+              save(); renderAll();
+              alert(`Importación: ${arr.length} tareas añadidas.`);
+            } catch(err) {
+              alert('Error JSON: '+ err);
+            }
+          };
+          reader.readAsText(file);
+        }
+      });
+      fileInput.value = '';
+      save(); renderLog();
+    };
+
+    // Importar JSON con el botón original (sigue intacto)
+    document.getElementById('btn-import').onclick = () => {
+      const input = document.getElementById('import-file');
+      if (!input.files.length) return alert('Selecciona un archivo JSON');
+      const reader = new FileReader();
+      reader.onload = e => {
+        try {
+          const arr = JSON.parse(e.target.result);
+          if (!Array.isArray(arr)) throw 'Formato no válido';
+          arr.forEach(item => {
+            const nid = state.tasks.reduce((m,t)=>m>t.id?m:t.id,0)+1;
+            state.tasks.push({
+              id: nid,
+              title: item.title || 'Sin título',
+              project: item.project || 'General',
+              date: item.date || new Date().toISOString().slice(0,10),
+              status: ['in-progress','completed','pending','cancelled'].includes(item.status)
+                      ? item.status : 'in-progress'
+            });
+          });
+          state.log.push({ time:Date.now(), text:`Importadas ${arr.length} tareas desde JSON.`});
+          save(); renderAll();
+          alert(`Importación exitosa: ${arr.length} tareas añadidas.`);
+        } catch(err) {
+          console.error(err);
+          alert('Error al parsear JSON: ' + err);
+        }
+      };
+      reader.onerror = () => alert('No se pudo leer el archivo');
+      reader.readAsText(input.files[0]);
+    };
+
+    function renderAll() {
+      renderSummary();
+      renderTasks();
+      renderLog();
+      updateChart();
+    }
+
+    // Inicial
+    renderAll();
+  </script>
+</body>
 </html>
