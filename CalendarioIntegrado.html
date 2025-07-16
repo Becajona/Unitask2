@@ -23,10 +23,9 @@
         <a href="index.html" class="text-xl font-bold">Mi Proyecto</a>
       </div>
 
-      <!-- Botón hamburguesa móvil -->
       <div class="flex items-center sm:hidden">
         <button id="menu-toggle" class="text-gray-300 focus:outline-none">
-          <!-- Ícono hamburguesa -->
+
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
@@ -45,16 +44,7 @@
       </div>
     </div>
 
-    <!-- Menú desplegable en móvil -->
-    <div id="menu-mobile" class="sm:hidden hidden mt-2 space-y-1">
-      <a href="CalendarioIntegrado.html" class="block py-2 px-4 hover:bg-gray-800">Calendario</a>
-      <a href="DetalleDeProyectos.html" class="block py-2 px-4 hover:bg-gray-800">Detalle de Proyectos</a>
-      <a href="GestionDeTareas.html" class="block py-2 px-4 hover:bg-gray-800">Gestión de Tareas</a>
-      <a href="ListaDeProyectos.html" class="block py-2 px-4 hover:bg-gray-800">Lista de Proyectos</a>
-      <a href="PanelDeControl.html" class="block py-2 px-4 hover:bg-gray-800">Panel de Control</a>
-      <a href="PerfilDeUsuario.html" class="block py-2 px-4 hover:bg-gray-800">Perfil de Usuario</a>
-    </div>
-  </div>
+    
 
   <!-- Script simple para toggle -->
   <script>
@@ -85,15 +75,10 @@
                   ></path>
                 </svg>
               </div>
-              <h2 class="text-[#0d141c] text-lg font-bold leading-tight tracking-[-0.015em]">ProjectFlow</h2>
             </div>
             <div class="flex items-center gap-9">
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Mi perfil</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Proyectos</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Tareas</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Calendario</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Documentos</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Comunicación</a>
+              <a href="PerfilDeUsuario.html" class="text-[#0d141c] text-sm font-medium leading-normal">Mi perfil</a>
+              
             </div>
           </div>
           <div class="flex flex-1 justify-end gap-8">
@@ -147,7 +132,7 @@
                       </svg>
                     </div>
                   </button>
-                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pr-10">Mayo 2024</p>
+                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pr-10">Mayo 2025</p>
                 </div>
                 <div class="grid grid-cols-7">
                   <p class="text-[#0d141c] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
@@ -251,7 +236,7 @@
               </div>
               <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
                 <div class="flex items-center p-1 justify-between">
-                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pl-10">Junio 2024</p>
+                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pl-10">Junio 2025</p>
                   <button>
                     <div class="text-[#0d141c] flex size-10 items-center justify-center" data-icon="CaretRight" data-size="18px" data-weight="regular">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
@@ -362,7 +347,7 @@
               </div>
               <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
                 <div class="flex items-center p-1 justify-between">
-                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pl-10">Junio 2024</p>
+                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pl-10">Julio 2025</p>
                   <button>
                     <div class="text-[#0d141c] flex size-10 items-center justify-center" data-icon="CaretRight" data-size="18px" data-weight="regular">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
@@ -500,11 +485,29 @@
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-wrap justify-between gap-3 p-4">
               <p class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight min-w-72">Calendario</p>
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-medium leading-normal"
-              >
-                <span class="truncate">Nuevo evento</span>
-              </button>
+
+             <!-- Botón que abre el modal -->
+<button id="openModalBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Nuevo evento</button>
+
+<!-- Modal oculto -->
+<div id="modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+  <div class="bg-white p-6 rounded shadow-md w-full max-w-md">
+    <h2 class="text-xl font-bold mb-4">Crear nuevo evento</h2>
+    <label class="block mb-2">Título:</label>
+    <input type="text" id="eventTitle" class="w-full border mb-4 px-2 py-1">
+    <label class="block mb-2">Fecha:</label>
+    <input type="date" id="eventDate" class="w-full border mb-4 px-2 py-1">
+    <label class="block mb-2">Hora Inicio:</label>
+    <input type="time" id="eventStart" class="w-full border mb-4 px-2 py-1">
+    <label class="block mb-2">Hora Fin:</label>
+    <input type="time" id="eventEnd" class="w-full border mb-4 px-2 py-1">
+    <button id="saveEventBtn" class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+    <button id="closeModalBtn" class="ml-2 px-4 py-2 rounded border">Cancelar</button>
+  </div>
+</div>
+
+
+
             </div>
             <div class="flex flex-wrap items-center justify-center gap-6 p-4">
               <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
@@ -516,7 +519,7 @@
                       </svg>
                     </div>
                   </button>
-                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pr-10">Mayo 2024</p>
+                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pr-10">Junio 2025</p>
                 </div>
                 <div class="grid grid-cols-7">
                   <p class="text-[#0d141c] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
@@ -620,7 +623,7 @@
               </div>
               <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
                 <div class="flex items-center p-1 justify-between">
-                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pl-10">Junio 2024</p>
+                  <p class="text-[#0d141c] text-base font-bold leading-tight flex-1 text-center pl-10">Julio 2025</p>
                   <button>
                     <div class="text-[#0d141c] flex size-10 items-center justify-center" data-icon="CaretRight" data-size="18px" data-weight="regular">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
@@ -730,102 +733,128 @@
                 </div>
               </div>
             </div>
-            <h3 class="text-[#0d141c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Eventos de hoy</h3>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="Users" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Reunión de equipo</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">10:00 AM - 11:00 AM</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="Presentation" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H79.36L57.75,219a8,8,0,0,0,12.5,10l29.59-37h56.32l29.59,37a8,8,0,1,0,12.5-10l-21.61-27H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,136H40V56H216V176Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Presentación del proyecto</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">2:00 PM - 3:00 PM</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12" data-icon="CheckSquare" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM224,48V208a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM208,208V48H48V208H208Z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Revisión de tareas</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">4:00 PM - 5:00 PM</p>
-              </div>
-            </div>
+       <h3 class="text-[#0d141c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Eventos de hoy</h3>
+
+<!-- Contenedor dinámico para eventos personalizados -->
+<div id="eventList" class="px-4 space-y-2">
+  <!-- Aquí se insertarán dinámicamente los eventos creados -->
+</div>
+
+<!-- Eventos predeterminados -->
+<div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
+  <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+      <path d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Z" />
+    </svg>
+  </div>
+  <div class="flex flex-col justify-center">
+    <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Reunión de equipo</p>
+    <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">10:00 AM - 11:00 AM</p>
+  </div>
+</div>
+
+<div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
+  <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+      <path d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,136H40V56H216V176Z" />
+    </svg>
+  </div>
+  <div class="flex flex-col justify-center">
+    <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Presentación del proyecto</p>
+    <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">2:00 PM - 3:00 PM</p>
+  </div>
+</div>
+
+<div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
+  <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+      <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM224,48V208a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM208,208V48H48V208H208Z" />
+    </svg>
+  </div>
+  <div class="flex flex-col justify-center">
+    <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Revisión de tareas</p>
+    <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">4:00 PM - 5:00 PM</p>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
     </div>
+    
     <script>
-      // 1) Selección de días del calendario
-      const dayButtons = document.querySelectorAll('.grid button');
-      dayButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const day = button.innerText.trim();
-          alert(`Seleccionaste el día ${day}`);
-          // Ejemplo: podrías aquí cargar eventos dinámicamente
-        });
-      });
+  const openModalBtn = document.getElementById('openModalBtn');
+  const modal = document.getElementById('modal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const saveEventBtn = document.getElementById('saveEventBtn');
+  const eventList = document.getElementById('eventList');
 
-      // 2) Botón "Nuevo evento"
-      const newEventBtn = document.querySelector('button:has(span.truncate)');
-      if (newEventBtn) {
-        newEventBtn.addEventListener('click', () => {
-          const title = prompt('Introduce el nombre del nuevo evento:');
-          if (title) {
-            alert(`Evento "${title}" creado (esto es un ejemplo)`);
-            // Aquí podrías insertar el evento a tu lista dinámica
-          }
-        });
-      }
+  openModalBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+  closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
 
-      // 3) Filtros de checkboxes
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-          const filterName = checkbox.nextElementSibling.innerText.trim();
-          const isChecked = checkbox.checked;
-          console.log(`Filtro ${filterName}: ${isChecked ? 'activado' : 'desactivado'}`);
-          // Aquí podrías mostrar/ocultar eventos según los filtros
-        });
-      });
+  function addEventToDOM(title, date, start, end) {
+    const eventDiv = document.createElement('div');
+    eventDiv.className = 'flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2';
 
-      // 4) Navegación entre meses (flechas)
-      const prevButtons = document.querySelectorAll('button:has(svg path[d*="165.66"])');
-      const nextButtons = document.querySelectorAll('button:has(svg path[d*="181.66"])');
+    eventDiv.innerHTML = `
+      <div class="text-[#0d141c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Z" />
+        </svg>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1 capitalize">${title}</p>
+        <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">${date} ${start} - ${end}</p>
+      </div>
+    `;
 
-      prevButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          alert('Ir al mes anterior');
-          // Lógica para cambiar el mes
-        });
-      });
+    eventList.appendChild(eventDiv);
+  }
 
-      nextButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          alert('Ir al mes siguiente');
-          // Lógica para cambiar el mes
-        });
-      });
-    </script>
+  saveEventBtn.addEventListener('click', () => {
+    const title = document.getElementById('eventTitle').value.trim();
+    const date = document.getElementById('eventDate').value;
+    const start = document.getElementById('eventStart').value;
+    const end = document.getElementById('eventEnd').value;
+
+    if (!title || !date || !start || !end) {
+      alert('Todos los campos son obligatorios.');
+      return;
+    }
+
+    addEventToDOM(title, date, start, end);
+    saveToLocalStorage();
+
+    // Reset y cerrar modal
+    document.getElementById('eventTitle').value = '';
+    document.getElementById('eventDate').value = '';
+    document.getElementById('eventStart').value = '';
+    document.getElementById('eventEnd').value = '';
+    modal.classList.add('hidden');
+  });
+
+  function saveToLocalStorage() {
+    const events = [];
+    eventList.querySelectorAll('.flex').forEach(div => {
+      const title = div.querySelector('p:nth-child(1)').innerText;
+      const time = div.querySelector('p:nth-child(2)').innerText;
+      events.push({ title, time });
+    });
+    localStorage.setItem('calendarEvents', JSON.stringify(events));
+  }
+
+  function loadFromLocalStorage() {
+    const events = JSON.parse(localStorage.getItem('calendarEvents')) || [];
+    events.forEach(ev => {
+      const [date, start, , end] = ev.time.split(' ');
+      addEventToDOM(ev.title, date, start, end);
+    });
+  }
+
+  window.onload = loadFromLocalStorage;
+</script>
+
+
     <script src="assets/CalendarioIntegrado.js" defer></script>
   </body>
 </html>
