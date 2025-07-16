@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Matriz de Riesgo – Proyecto Móvil</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      th.rotate {
+        /* Rotar texto de encabezado de probabilidad */
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body class="bg-light py-4">
+    <div class="container">
+      <!-- Botón regresar -->
+      <div class="mb-4">
+        <a href="index.html" class="btn btn-secondary">&larr; Regresar al Inicio</a>
+      </div>
+
+      <h1 class="mb-4 text-center">Matriz de Riesgo</h1>
+      <p class="lead text-center">Proyecto: Desarrollo de Aplicación Móvil</p>
+
+      <div class="table-responsive">
+        <table class="table table-bordered text-center align-middle">
+          <thead>
+            <tr>
+              <th rowspan="2"></th>
+              <th colspan="5">Impacto →</th>
+            </tr>
+            <tr>
+              <th class="fw-semibold">Muy Bajo</th>
+              <th class="fw-semibold">Bajo</th>
+              <th class="fw-semibold">Moderado</th>
+              <th class="fw-semibold">Alto</th>
+              <th class="fw-semibold">Muy Alto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="align-middle rotate">Muy Alta ↓</th>
+              <td class="bg-danger text-white small">
+                • Pérdida de datos de usuario<br>
+                • Falla crítica de login
+              </td>
+              <td class="bg-danger opacity-75 text-white small">
+                • Crashing en dispositivos más viejos
+              </td>
+              <td class="bg-danger opacity-50 text-white small">
+                • Retrasos en notificaciones push
+              </td>
+              <td class="bg-warning opacity-75 small">
+                • Errores menores de UI
+              </td>
+              <td class="bg-warning opacity-50 small">
+                • Tipos de letra incorrecta
+              </td>
+            </tr>
+            <tr>
+              <th class="align-middle rotate">Alta ↓</th>
+              <td class="bg-danger opacity-75 text-white small">
+                • Brecha de seguridad OAuth
+              </td>
+              <td class="bg-danger opacity-50 text-white small">
+                • Fuga de memoria en background
+              </td>
+              <td class="bg-warning opacity-75 small">
+                • Sincronización lenta con servidor
+              </td>
+              <td class="bg-warning opacity-50 small">
+                • Errores de validación de formularios
+              </td>
+              <td class="bg-success opacity-75 small">
+                • Documentación desactualizada
+              </td>
+            </tr>
+            <tr>
+              <th class="align-middle rotate">Moderada ↓</th>
+              <td class="bg-danger opacity-50 text-white small">
+                • API externa fuera de servicio
+              </td>
+              <td class="bg-warning opacity-75 small">
+                • Problemas de compatibilidad iOS/Android
+              </td>
+              <td class="bg-warning opacity-50 small">
+                • Fallos intermitentes de GPS
+              </td>
+              <td class="bg-success opacity-75 small">
+                • Latencia de base de datos local
+              </td>
+              <td class="bg-success opacity-50 small">
+                • Estilos CSS desalineados
+              </td>
+            </tr>
+            <tr>
+              <th class="align-middle rotate">Baja ↓</th>
+              <td class="bg-warning opacity-75 small">
+                • Cambios en requisitos no críticos
+              </td>
+              <td class="bg-warning opacity-50 small">
+                • Texto de ayuda insuficiente
+              </td>
+              <td class="bg-success opacity-75 small">
+                • Retrasos en actualizaciones menores
+              </td>
+              <td class="bg-success opacity-50 small">
+                • Imágenes de demo anticuadas
+              </td>
+              <td class="bg-light small">
+                • Comentarios de código faltantes
+              </td>
+            </tr>
+            <tr>
+              <th class="align-middle rotate">Muy Baja ↓</th>
+              <td class="bg-warning opacity-50 small">
+                • Ajuste de colores poco relevante
+              </td>
+              <td class="bg-success opacity-75 small">
+                • Corrección de typo en texto
+              </td>
+              <td class="bg-success opacity-50 small">
+                • Reordenar listas no críticas
+              </td>
+              <td class="bg-light small">
+                • Iconos de placeholder
+              </td>
+              <td class="bg-light opacity-75 small">
+                • Nombrado de variables
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Leyenda -->
+      <div class="row text-center mt-4">
+        <div class="col-6 col-md-3 mb-2">
+          <span class="d-inline-block bg-danger text-white px-3 py-1">Crítico</span>
+        </div>
+        <div class="col-6 col-md-3 mb-2">
+          <span class="d-inline-block bg-warning px-3 py-1">Medio</span>
+        </div>
+        <div class="col-6 col-md-3 mb-2">
+          <span class="d-inline-block bg-success text-white px-3 py-1">Bajo</span>
+        </div>
+        <div class="col-6 col-md-3 mb-2">
+          <span class="d-inline-block bg-light border px-3 py-1">Muy Bajo</span>
+        </div>
+      </div>
+
+      <p class="text-muted small mt-3 text-center">
+        Cada celda agrupa riesgos según su probabilidad de ocurrencia y el impacto sobre el proyecto.
+      </p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-GomZbc0joezi3PQnjuvEmqzX+0RSBYcq48UJ+OaWKzKSCWMAZfg2f2tMVb0VLGlZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
