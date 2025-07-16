@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
-    <title>Mi Proyecto</title>
+    <title>Index</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -17,148 +18,65 @@
     />
   </head>
 
-  <body class="d-flex flex-column min-vh-100">
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Unitask</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="CalendarioIntegrado.html">Calendario</a></li>
-            <li class="nav-item"><a class="nav-link" href="DetalleDeProyectos.html">Detalle de Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="GestionDeTareas.html">Gestión de Tareas</a></li>
-            <li class="nav-item"><a class="nav-link" href="ListaDeProyectos.html">Lista de Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="PanelDeControl.html">Panel de Control</a></li>
-            <li class="nav-item"><a class="nav-link" href="PerfilDeUsuario.html">Perfil de Usuario</a></li>
-          </ul>
+  <body>
+    <header>
+      <!-- Navbar Bootstrap -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Mi Proyecto</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="CalendarioIntegrado.html">Calendario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="DetalleDeProyectos.html">Detalle de Proyectos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="GestionDeTareas.html">Gestión de Tareas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ListaDeProyectos.html">Lista de Proyectos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="PanelDeControl.html">Panel de Control</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="PerfilDeUsuario.html">Perfil de Usuario</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <!-- Hero -->
-    <main class="flex-grow-1">
-      <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5 text-center">
-          <h1 class="display-5 fw-bold">Bienvenido a Mi Proyecto</h1>
-          <p class="col-md-8 fs-4 mx-auto">
-            Centraliza aquí la gestión de tus tareas, proyectos y calendario.
-          </p>
-          <a href="GestionDeTareas.html" class="btn btn-primary btn-lg me-2">Gestionar Tareas</a>
-          <a href="ListaDeProyectos.html" class="btn btn-outline-secondary btn-lg">Ver Proyectos</a>
-        </div>
-      </div>
-
-      <!-- Tabla de Proyectos -->
-      <div class="container mb-5">
-        <h2 class="mb-4">Todos los Proyectos</h2>
-        <table class="table table-hover">
-          <thead class="table-light">
-            <tr>
-              <th>Nombre</th>
-              <th>Estado</th>
-              <th>Fecha de Inicio</th>
-              <th>Fecha de Fin</th>
-              <th>Responsable</th>
-            </tr>
-          </thead>
-          <tbody id="projects-table-body">
-            <!-- Se inyectan aquí los proyectos -->
-          </tbody>
-        </table>
-        <button id="create-project-btn" class="btn btn-success">
-          Crear Proyecto de Prueba
-        </button>
-      </div>
+    <main class="container mt-5">
+      <h1>Bienvenido a Mi Proyecto</h1>
+      <p>Usa la barra de navegación para acceder a las diferentes secciones.</p>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light text-center py-3 mt-auto">
-      © 2025 Unitask. Todos los derechos reservados.
+    <footer class="bg-dark text-light text-center py-3 mt-5">
+      &copy; 2025 Mi Proyecto. Todos los derechos reservados.
     </footer>
 
-    <!-- Firebase + Lógica -->
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        getDocs,
-        addDoc
-      } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-
-      // Configuración de Firebase
-      const firebaseConfig = {
-        apiKey: "AIzaSyDJk3VXyCHSu6ujdNhLZfgJeUhzl2qsOR4",
-        authDomain: "unitask-a35a9.firebaseapp.com",
-        projectId: "unitask-a35a9",
-        storageBucket: "unitask-a35a9.appspot.com",
-        messagingSenderId: "76838238097",
-        appId: "1:76838238097:web:1c1620cf3331d7d9f98c30"
-      };
-
-      // Inicializa Firebase
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      // Colección "proyectos"
-      const projectsCol = collection(db, "proyectos");
-      const tbody = document.getElementById("projects-table-body");
-
-      // Carga y pinta todos los proyectos
-      async function loadProjects() {
-        tbody.innerHTML = "";
-        const snap = await getDocs(projectsCol);
-        snap.forEach(doc => {
-          const p = doc.data();
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td>${p.nombre}</td>
-            <td>
-              <span class="badge bg-secondary">${p.estado}</span>
-            </td>
-            <td>${p.fechaInicio}</td>
-            <td>${p.fechaFin}</td>
-            <td>${p.responsable}</td>
-          `;
-          tbody.appendChild(tr);
-        });
-      }
-
-      // Arranca la carga
-      loadProjects();
-
-      // Botón de prueba para crear un proyecto
-      document.getElementById("create-project-btn")
-        .addEventListener("click", async () => {
-          await addDoc(projectsCol, {
-            nombre: "Proyecto Demo",
-            estado: "Pendiente",
-            fechaInicio: new Date().toLocaleDateString(),
-            fechaFin: "",
-            responsable: "Usuario"
-          });
-          loadProjects();
-        });
-    </script>
-
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"
     ></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"

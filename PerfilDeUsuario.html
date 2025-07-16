@@ -19,13 +19,12 @@
     <div class="flex justify-between h-16">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="index.html" class="text-xl font-bold">Unitask</a>
+        <a href="index.html" class="text-xl font-bold">Mi Proyecto</a>
       </div>
 
-      <!-- Botón hamburguesa móvil -->
       <div class="flex items-center sm:hidden">
         <button id="menu-toggle" class="text-gray-300 focus:outline-none">
-          <!-- Ícono hamburguesa -->
+
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
@@ -44,17 +43,7 @@
       </div>
     </div>
 
-    <!-- Menú desplegable en móvil -->
-    <div id="menu-mobile" class="sm:hidden hidden mt-2 space-y-1">
-      <a href="CalendarioIntegrado.html" class="block py-2 px-4 hover:bg-gray-800">Calendario</a>
-      <a href="DetalleDeProyectos.html" class="block py-2 px-4 hover:bg-gray-800">Detalle de Proyectos</a>
-      <a href="GestionDeTareas.html" class="block py-2 px-4 hover:bg-gray-800">Gestión de Tareas</a>
-      <a href="ListaDeProyectos.html" class="block py-2 px-4 hover:bg-gray-800">Lista de Proyectos</a>
-      <a href="PanelDeControl.html" class="block py-2 px-4 hover:bg-gray-800">Panel de Control</a>
-      <a href="PerfilDeUsuario.html" class="block py-2 px-4 hover:bg-gray-800">Perfil de Usuario</a>
-    </div>
-  </div>
-
+   
   <!-- Script simple para toggle -->
   <script>
     const btn = document.getElementById('menu-toggle');
@@ -64,79 +53,81 @@
       menuMobile.classList.toggle('hidden');
     });
   </script>
-</nav>
 
-    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-80">
-            <div class="flex h-full min-h-[700px] flex-col justify-between bg-slate-50 p-4">
-              <div class="flex flex-col gap-4">
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e7edf4]">
-                    <div class="text-[#0d141c]" data-icon="User" data-size="24px" data-weight="fill">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Mi perfil</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="Bell" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Notificaciones</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="Gear" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Preferencias</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="Shield" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M208,40H48A16,16,0,0,0,32,56v58.77c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56l160,0Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Seguridad</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="PuzzlePiece" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M220.27,158.54a8,8,0,0,0-7.7-.46,20,20,0,1,1,0-36.16A8,8,0,0,0,224,114.69V72a16,16,0,0,0-16-16H171.78a35.36,35.36,0,0,0,.22-4,36.11,36.11,0,0,0-11.36-26.24,36,36,0,0,0-60.55,23.62,36.56,36.56,0,0,0,.14,6.62H64A16,16,0,0,0,48,72v32.22a35.36,35.36,0,0,0-4-.22,36.12,36.12,0,0,0-26.24,11.36,35.7,35.7,0,0,0-9.69,27,36.08,36.08,0,0,0,33.31,33.6,35.68,35.68,0,0,0,6.62-.14V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V165.31A8,8,0,0,0,220.27,158.54ZM208,208H64V165.31a8,8,0,0,0-11.43-7.23,20,20,0,1,1,0-36.16A8,8,0,0,0,64,114.69V72h46.69a8,8,0,0,0,7.23-11.43,20,20,0,1,1,36.16,0A8,8,0,0,0,161.31,72H208v32.23a35.68,35.68,0,0,0-6.62-.14A36,36,0,0,0,204,176a35.36,35.36,0,0,0,4-.22Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Integraciones</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0d141c]" data-icon="Question" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0d141c] text-sm font-medium leading-normal">Ayuda</p>
-                  </div>
-                </div>
+</nav>
+<div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+  <div class="layout-container flex h-full grow flex-col">
+    <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+      <!-- Sidebar -->
+      <div class="layout-content-container flex flex-col w-80">
+        <div class="flex h-full min-h-[700px] flex-col justify-start bg-slate-50 p-4">
+          <div class="flex flex-col gap-2">
+                <!-- Sidebar: ítems con botones -->
+            <button onclick="location.href='PerfilDeUsuario.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e7edf4] w-full text-left">
+              <div class="text-[#0d141c]">
+                <!-- Icono Mi perfil -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"></path>
+                </svg>
               </div>
-            </div>
+              <span class="text-[#0d141c] text-sm font-medium">Mi perfil</span>
+            </button>
+
+            <button onclick="location.href='Notificaciones.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+              <div class="text-[#0d141c]">
+                <!-- Icono Notificaciones -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"></path>
+                </svg>
+              </div>
+              <span class="text-[#0d141c] text-sm font-medium">Notificaciones</span>
+            </button>
+
+            <button onclick="location.href='Preferencias.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+              <div class="text-[#0d141c]">
+                <!-- Icono Preferencias -->
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93L192.8,64.72A8,8,0,0,0,186,60.54a107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40H125.84L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27A8,8,0,0,0,64,72.22V128Z"/>
+      </svg>
+              </div>
+              <span class="text-[#0d141c] text-sm font-medium">Preferencias</span>
+            </button>
+
+            <button onclick="location.href='Seguridad.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+              <div class="text-[#0d141c]">
+                <!-- Icono Seguridad -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M208,40H48A16,16,0,0,0,32,56v58.77c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Z"></path>
+                </svg>
+              </div>
+              <span class="text-[#0d141c] text-sm font-medium">Seguridad</span>
+            </button>
+
+            <button onclick="location.href='Integraciones.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+              <div class="text-[#0d141c]">
+                <!-- Icono Integraciones -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M220.27,158.54a8,8,0,0,0-7.7-.46,20,20,0,1,1,0-36.16A8,8,0,0,0,224,114.69V72a16,16,0,0,0-16-16H171.78a36,36,0,0,0-60.55,23.62H64A16,16,0,0,0,48,72v32.22a36,36,0,0,0-26.24,11.36V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V165.31A8,8,0,0,0,220.27,158.54Z"></path>
+                </svg>
+              </div>
+              <span class="text-[#0d141c] text-sm font-medium">Integraciones</span>
+            </button>
+
+            <button onclick="location.href='Ayuda.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+              <div class="text-[#0d141c]">
+                <!-- Icono Ayuda -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Z"></path>
+                </svg>
+              </div>
+              <span class="text-[#0d141c] text-sm font-medium">Ayuda</span>
+            </button>
+
           </div>
+        </div>
+      </div>
+            
+           <!-- Contenido principal -->
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight min-w-72">Mi perfil</p></div>
             <div class="flex p-4 @container">
@@ -147,86 +138,175 @@
                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkoVltDOTvsYIiV8ajJNQNjBIC6d4O1mqocTGjYDL_146iQCmlt99SewW63QqMFqL_sfz43f-3emh5ATqHoLj-oc3sJfKAcVY786oaEDdDIzI5TkCAs5UnIJcmV9t3pIRveE-zxEPlzX0fOQiAPE6Xe-meQ6zKJIbHMA-YquYg9GvQxrqUPA9ve2eeLFojqG4CXl7VSEJOy2317YFG-JhdjRwQJ8DXgcm-W0m0-xl17nAO043PVPr4mbAdJMd4In53w72kiVwzHgU");'
                   ></div>
                   <div class="flex flex-col justify-center">
-                    <p class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em]">Sofía Rodríguez</p>
-                    <p class="text-[#49739c] text-base font-normal leading-normal">sofia.rodriguez@email.com</p>
+                    <p id="nombre-perfil" class="text-[#0d141c] text-[22px] font-bold ...">Sofía Rodríguez</p>
+<p id="correo-perfil" class="text-[#49739c] text-base ...">sofia.rodriguez@email.com</p>
+
                   </div>
                 </div>
               </div>
-            </div>
-            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Información personal</h2>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Nombre</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Apellido</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Correo electrónico</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Número de teléfono</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Cargo</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Departamento</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Ubicación</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex px-4 py-3 justify-end">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">Guardar cambios</span>
-              </button>
-            </div>
+
+           </div>
+<!-- Título de Información personal -->
+<h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+  Información personal
+</h2>
+
+
+<!-- Botón Editar Perfil -->
+<div class="flex px-4 py-3 justify-end">
+  <button
+    id="btn-editar-perfil"
+    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+  >
+    <span class="truncate">Editar perfil</span>
+  </button>
+</div>
+<!-- Formulario oculto -->
+<div id="formulario-perfil" class="hidden">
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col min-w-40 flex-1">
+    <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Nombre</p>
+    <input
+      placeholder="Nombre"
+      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
+      value=""
+    />
+  </label>
+</div>
+
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col min-w-40 flex-1">
+    <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Apellido</p>
+    <input
+      placeholder="Apellido"
+      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
+      value=""
+    />
+  </label>
+</div>
+
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col min-w-40 flex-1">
+    <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Correo electrónico</p>
+    <input
+      placeholder="Correo electrónico"
+      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
+      value=""
+    />
+  </label>
+</div>
+
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col min-w-40 flex-1">
+    <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Número de teléfono</p>
+    <input
+      placeholder="Número de teléfono"
+      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
+      value=""
+    />
+  </label>
+</div>
+
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col min-w-40 flex-1">
+    <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Cargo</p>
+    <input
+      placeholder="Cargo"
+      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
+      value=""
+    />
+  </label>
+</div>
+
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col min-w-40 flex-1">
+    <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Departamento</p>
+    <input
+      placeholder="Departamento"
+      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
+      value=""
+    />
+  </label>
+</div>
+
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col min-w-40 flex-1">
+    <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Ubicación</p>
+    <input
+      placeholder="Ubicación"
+      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedbe8] bg-slate-50 focus:border-[#cedbe8] h-14 placeholder:text-[#49739c] p-[15px] text-base font-normal leading-normal"
+      value=""
+    />
+  </label>
+</div>
+
+<!-- Botón con ID único -->
+<div class="flex px-4 py-3 justify-end">
+  <button
+    id="guardar-cambios"
+    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+  >
+    <span class="truncate">Guardar cambios</span>
+  </button>
+</div>
+
           </div>
         </div>
       </div>
     </div>
+   <!-- Tu script final -->
+   <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const saveButton = document.getElementById("guardar-cambios");
+    const editButton = document.getElementById("btn-editar-perfil");
+    const formulario = document.getElementById("formulario-perfil");
+
+    const nombrePerfil = document.getElementById("nombre-perfil");
+    const correoPerfil = document.getElementById("correo-perfil");
+
+    // Cargar datos guardados
+    const datosGuardados = JSON.parse(localStorage.getItem("perfilUsuario"));
+    if (datosGuardados) {
+      nombrePerfil.textContent = datosGuardados.nombre + " " + datosGuardados.apellido;
+      correoPerfil.textContent = datosGuardados.correo;
+
+      // Precargar formulario
+      document.querySelector('input[placeholder="Nombre"]').value = datosGuardados.nombre;
+      document.querySelector('input[placeholder="Apellido"]').value = datosGuardados.apellido;
+      document.querySelector('input[placeholder="Correo electrónico"]').value = datosGuardados.correo;
+      document.querySelector('input[placeholder="Número de teléfono"]').value = datosGuardados.telefono;
+      document.querySelector('input[placeholder="Cargo"]').value = datosGuardados.cargo;
+      document.querySelector('input[placeholder="Departamento"]').value = datosGuardados.departamento;
+      document.querySelector('input[placeholder="Ubicación"]').value = datosGuardados.ubicacion;
+    }
+
+    // Mostrar/ocultar formulario
+    editButton.addEventListener("click", function() {
+      formulario.classList.toggle("hidden");
+    });
+
+    saveButton.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const nombre = document.querySelector('input[placeholder="Nombre"]').value;
+      const apellido = document.querySelector('input[placeholder="Apellido"]').value;
+      const correo = document.querySelector('input[placeholder="Correo electrónico"]').value;
+      const telefono = document.querySelector('input[placeholder="Número de teléfono"]').value;
+      const cargo = document.querySelector('input[placeholder="Cargo"]').value;
+      const departamento = document.querySelector('input[placeholder="Departamento"]').value;
+      const ubicacion = document.querySelector('input[placeholder="Ubicación"]').value;
+
+      const datos = { nombre, apellido, correo, telefono, cargo, departamento, ubicacion };
+      localStorage.setItem("perfilUsuario", JSON.stringify(datos));
+
+      nombrePerfil.textContent = nombre + " " + apellido;
+      correoPerfil.textContent = correo;
+
+      alert("Cambios guardados correctamente.");
+      formulario.classList.add("hidden");
+    });
+  });
+</script>
+
   </body>
 </html>

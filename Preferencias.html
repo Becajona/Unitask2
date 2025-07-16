@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mi Proyecto - Preferencias</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-slate-50" style='font-family: Inter, "Noto Sans", sans-serif;'>
+
+<!-- Navbar -->
+<nav class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between h-16 items-center">
+    <a href="index.html" class="text-xl font-bold">Mi Proyecto</a>
+    <div class="hidden sm:flex space-x-4">
+      <a href="CalendarioIntegrado.html" class="hover:text-gray-300">Calendario</a>
+      <a href="DetalleDeProyectos.html" class="hover:text-gray-300">Detalle de Proyectos</a>
+      <a href="GestionDeTareas.html" class="hover:text-gray-300">Gestión de Tareas</a>
+      <a href="ListaDeProyectos.html" class="hover:text-gray-300">Lista de Proyectos</a>
+      <a href="PanelDeControl.html" class="hover:text-gray-300">Panel de Control</a>
+      <a href="PerfilDeUsuario.html" class="hover:text-gray-300">Perfil de Usuario</a>
+    </div>
+  </div>
+</nav>
+
+<div class="flex min-h-screen">
+  <!-- Sidebar -->
+  <div class="w-80 p-4 flex flex-col gap-2">
+    <!-- Botones Sidebar -->
+    <button onclick="location.href='PerfilDeUsuario.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+      <div class="text-[#0d141c]">
+        <!-- Icono Perfil -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12
+            c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0
+            c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/>
+        </svg>
+      </div>
+      <span class="text-[#0d141c] text-sm font-medium">Mi perfil</span>
+    </button>
+
+    <button onclick="location.href='Notificaciones.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+      <div class="text-[#0d141c]">
+        <!-- Icono Notificaciones -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104
+            a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81
+            a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216
+            a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/>
+        </svg>
+      </div>
+      <span class="text-[#0d141c] text-sm font-medium">Notificaciones</span>
+    </button>
+
+    <!-- Preferencias activo -->
+    <button class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e7edf4] w-full text-left">
+      <div class="text-[#0d141c]">
+        <!-- Icono Preferencias -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93L192.8,64.72A8,8,0,0,0,186,60.54a107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40H125.84L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27A8,8,0,0,0,64,72.22V128Z"/>
+      </svg>
+              
+      </div>
+      <span class="text-[#0d141c] text-sm font-medium">Preferencias</span>
+    </button>
+
+    <button onclick="location.href='Seguridad.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+      <div class="text-[#0d141c]">
+        <!-- Icono Seguridad -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M208,40H48A16,16,0,0,0,32,56v58.77
+            c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0
+            c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Z"/>
+        </svg>
+      </div>
+      <span class="text-[#0d141c] text-sm font-medium">Seguridad</span>
+    </button>
+
+    <button onclick="location.href='Integraciones.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+      <div class="text-[#0d141c]">
+        <!-- Icono Integraciones -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M220.27,158.54a8,8,0,0,0-7.7-.46
+            a20,20,0,1,1,0-36.16A8,8,0,0,0,224,114.69V72
+            a16,16,0,0,0-16-16H171.78a36,36,0,0,0-60.55,23.62H64A16,16,0,0,0,48,72v32.22
+            a36,36,0,0,0-26.24,11.36V208a16,16,0,0,0,16,16H208
+            a16,16,0,0,0,16-16V165.31A8,8,0,0,0,220.27,158.54Z"/>
+        </svg>
+      </div>
+      <span class="text-[#0d141c] text-sm font-medium">Integraciones</span>
+    </button>
+
+    <button onclick="location.href='Ayuda.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#e7edf4] w-full text-left">
+      <div class="text-[#0d141c]">
+        <!-- Icono Ayuda -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M140,180a12,12,0,1,1-12-12
+            A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4
+            c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20
+            a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28
+            C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24
+            A104.11,104.11,0,0,1,232,128Z"/>
+        </svg>
+      </div>
+      <span class="text-[#0d141c] text-sm font-medium">Ayuda</span>
+    </button>
+  </div>
+
+   <!-- Main -->
+  <main class="flex-1 p-8">
+    <h1 class="text-3xl font-bold mb-4">Preferencias</h1>
+    <p class="text-[#49739c] mb-4">Configura las preferencias generales de tu cuenta.</p>
+
+    <!-- Configuraciones -->
+    <div class="space-y-6">
+      <!-- Tema Oscuro -->
+      <div class="p-4 bg-white border rounded-lg flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-[#0d141c]">Tema oscuro</h3>
+          <p class="text-sm text-[#49739c]">Activa o desactiva el modo oscuro para la interfaz.</p>
+        </div>
+        <label class="inline-flex items-center cursor-pointer">
+          <input id="darkModeToggle" type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+          <span class="ml-2 text-sm text-[#0d141c]">Activar</span>
+        </label>
+      </div>
+
+      <!-- Idioma -->
+      <div class="p-4 bg-white border rounded-lg flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-[#0d141c]">Idioma</h3>
+          <p class="text-sm text-[#49739c]">Selecciona tu idioma preferido.</p>
+        </div>
+        <select id="languageSelect" class="border rounded-lg p-2">
+          <option value="es">Español</option>
+          <option value="en">Inglés</option>
+        </select>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Script funcional -->
+<script>
+  const darkModeToggle = document.getElementById("darkModeToggle");
+  const languageSelect = document.getElementById("languageSelect");
+
+  // Inicializar
+  document.addEventListener("DOMContentLoaded", () => {
+    const isDark = localStorage.getItem("temaOscuro") === "true";
+    darkModeToggle.checked = isDark;
+    aplicarTema(isDark);
+
+    const lang = localStorage.getItem("idioma") || "es";
+    languageSelect.value = lang;
+  });
+
+  darkModeToggle.addEventListener("change", () => {
+    const isDark = darkModeToggle.checked;
+    localStorage.setItem("temaOscuro", isDark);
+    aplicarTema(isDark);
+  });
+
+  languageSelect.addEventListener("change", () => {
+    localStorage.setItem("idioma", languageSelect.value);
+    alert("Idioma cambiado a " + (languageSelect.value === "es" ? "Español" : "Inglés"));
+  });
+
+  function aplicarTema(isDark) {
+    document.body.classList.toggle("bg-gray-900", isDark);
+    document.body.classList.toggle("text-white", isDark);
+    document.body.classList.toggle("bg-slate-50", !isDark);
+    document.body.classList.toggle("text-black", !isDark);
+  }
+</script>
+
+</body>
+</html>
