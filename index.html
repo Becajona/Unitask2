@@ -66,21 +66,79 @@
       <p>Usa la barra de navegación para acceder a las diferentes secciones.</p>
     </main>
 
+    <!-- Contenedor para la tabla de proyectos -->
+<tbody id="projects-table-body">
+  <!-- Se llenará dinámicamente desde Firestore -->
+</tbody>
+
+<!-- === SCRIPT FIREBASE === -->
+<script type="module">
+  // Firebase imports
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDJk3VXyCHSu6ujdNhLZfgJeUhzl2qsOR4",
+    authDomain: "unitask-a35a9.firebaseapp.com",
+    projectId: "unitask-a35a9",
+    storageBucket: "unitask-a35a9.appspot.com",
+    messagingSenderId: "76838238097",
+    appId: "1:76838238097:web:1c1620cf3331d7d9f98c30"
+  };
+
+  // Inicializar Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Referencia a colección
+  const projectsCol = collection(db, "proyectos");
+
+  // Función para renderizar proyectos
+  async function loadProjects() {
+    const snapshot = await getDocs(projectsCol);
+    const tbody = document.getElementById('projects-table-body');
+    tbody.innerHTML = ""; // Limpia tabla
+
+    snapshot.forEach(doc => {
+      const p = doc.data();
+      const row = document.createElement('tr');
+      row.className = "border-t border-t-[#cedbe8]";
+
+      row.innerHTML = `
+        <td class="px-4 py-2 w-[400px] text-[#0d141c] text-sm font-normal">${p.nombre}</td>
+        <td class="px-4 py-2 w-60 text-sm">
+          <button class="flex min-w-[84px] items-center justify-center rounded-lg h-8 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-medium">
+            <span>${p.estado}</span>
+          </button>
+        </td>
+        <td class="px-4 py-2 w-[400px] text-[#49739c] text-sm">${p.fechaInicio}</td>
+        <td class="px-4 py-2 w-[400px] text-[#49739c] text-sm">${p.fechaFin}</td>
+        <td class="px-4 py-2 w-[400px] text-[#49739c] text-sm">${p.responsable}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  }
+
+  // Ejecutar al cargar
+  loadProjects();
+
+  // EJEMPLO: Crear proyecto (botón)
+  document.querySelector("button:contains('Crear Proyecto')")?.addEventListener("click", async () => {
+    await addDoc(projectsCol, {
+      nombre: "Nuevo Proyecto",
+      estado: "Pendiente",
+      fechaInicio: "01/08/2024",
+      fechaFin: "31/12/2024",
+      responsable: "Usuario Demo"
+    });
+    loadProjects();
+  });
+</script>
+
     <footer class="bg-dark text-light text-center py-3 mt-5">
       &copy; 2025 Mi Proyecto. Todos los derechos reservados.
     </footer>
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
+    
   </body>
 </html>
