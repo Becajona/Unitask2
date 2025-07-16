@@ -14,6 +14,58 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
+    <nav class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="index.html" class="text-xl font-bold">Mi Proyecto</a>
+      </div>
+
+      <!-- Botón hamburguesa móvil -->
+      <div class="flex items-center sm:hidden">
+        <button id="menu-toggle" class="text-gray-300 focus:outline-none">
+          <!-- Ícono hamburguesa -->
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Links de navegación -->
+      <div id="menu" class="hidden sm:flex sm:items-center space-x-4">
+        <a href="CalendarioIntegrado.html" class="hover:text-gray-300">Calendario</a>
+        <a href="DetalleDeProyectos.html" class="hover:text-gray-300">Detalle de Proyectos</a>
+        <a href="GestionDeTareas.html" class="hover:text-gray-300">Gestión de Tareas</a>
+        <a href="ListaDeProyectos.html" class="hover:text-gray-300">Lista de Proyectos</a>
+        <a href="PanelDeControl.html" class="hover:text-gray-300">Panel de Control</a>
+        <a href="PerfilDeUsuario.html" class="hover:text-gray-300">Perfil de Usuario</a>
+      </div>
+    </div>
+
+    <!-- Menú desplegable en móvil -->
+    <div id="menu-mobile" class="sm:hidden hidden mt-2 space-y-1">
+      <a href="CalendarioIntegrado.html" class="block py-2 px-4 hover:bg-gray-800">Calendario</a>
+      <a href="DetalleDeProyectos.html" class="block py-2 px-4 hover:bg-gray-800">Detalle de Proyectos</a>
+      <a href="GestionDeTareas.html" class="block py-2 px-4 hover:bg-gray-800">Gestión de Tareas</a>
+      <a href="ListaDeProyectos.html" class="block py-2 px-4 hover:bg-gray-800">Lista de Proyectos</a>
+      <a href="PanelDeControl.html" class="block py-2 px-4 hover:bg-gray-800">Panel de Control</a>
+      <a href="PerfilDeUsuario.html" class="block py-2 px-4 hover:bg-gray-800">Perfil de Usuario</a>
+    </div>
+  </div>
+
+  <!-- Script simple para toggle -->
+  <script>
+    const btn = document.getElementById('menu-toggle');
+    const menuMobile = document.getElementById('menu-mobile');
+
+    btn.addEventListener('click', () => {
+      menuMobile.classList.toggle('hidden');
+    });
+  </script>
+</nav>
+
     <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
